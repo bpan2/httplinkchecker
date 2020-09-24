@@ -1,7 +1,7 @@
 # httplinkchecker
 Written in java, httplinkchecker is used to check if HTTP links are broken or not
 
-0. CLI Usage on Windows 10 system:
+##  0. CLI Usage on Windows 10 system:
 
 	Syntax: 
 		$java -jar httplinkchecker.jar -r/v/help arg-1 arg-2 ...
@@ -22,7 +22,7 @@ Written in java, httplinkchecker is used to check if HTTP links are broken or no
 			2. -v: version information
 			3. -h/help: for information about the tool as well as instructions on how to use the tool
 
-1. Design Considerations:
+##  1. Design Considerations:
 	1.1 Objects to be used:
 		1.1.1. ArgParser: 
 			parsing all the user input via CLI arguments
@@ -40,7 +40,7 @@ Written in java, httplinkchecker is used to check if HTTP links are broken or no
 
 		1.1.5. Message
 
-2. Implementation Considertations:
+##  2. Implementation Considertations:
 		2.1 LinkRetriever: 1. Performance is a key factor to be considered 
 					when the number of files to be searched and the size of a file to be searched 
 					are signficant enough to impact the performance of this tool. 
@@ -53,5 +53,5 @@ Written in java, httplinkchecker is used to check if HTTP links are broken or no
 		 
 		2.3 Singleton pattern is used for utility classes: LinkStatus and Message				 
 
-3. Known issues
+##   3. Known issues
 	3.1 jdk version conflicts between the version installed on Windows 10 and the version used by Eclipse(2020-09)  
