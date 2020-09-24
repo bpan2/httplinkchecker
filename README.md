@@ -19,7 +19,7 @@ Written in java, httplinkchecker is used to check if HTTP links are broken or no
 			or a file name with a regular file extension(such as txt, html) in the current directory/folder
 			or both.
 			
-		4. the options of this tool ALWAYS starts with a single '-'.
+		4. the options of this tool ALWAYS starts with a single '-' character(the hyphen).
 		   So far, the options programmed are: 
 			1. -r: recursively read all existing sub-directories/folders for regular files
 			2. -v: version information
