@@ -55,7 +55,8 @@ Written in java, httplinkchecker is used to check if HTTP links are broken or no
 				   	based on the suggestions from
 				https://stackoverflow.com/questions/14037404/java-read-large-text-file-with-70million-line-of-text 
 
-		2.2 LinkValidator: 1. Performance could become significant issue when sending out HTTP requests and waiting for responses.
+		2.2 LinkValidator: 1. Performance could become significant issue when sending out many HTTP requests 
+					and waiting for responses.
 				   2. Mutlithreading is considered via java's ExecutorService to manage multithreading.
 		 
 		2.3 Singleton pattern is used for utility classes: LinkStatus and Message
