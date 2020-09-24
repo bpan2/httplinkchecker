@@ -63,7 +63,7 @@ Written in java, httplinkchecker is used to check if HTTP links are broken or no
 		
 		2.4 In Message class, use HashMap instead of 2D String array to store all fixed messages for output
 		
-		2.5 Displaying too many the response results could slow down the performance of the tool 
+		2.5 Displaying too many the response results simultaneously could slow down the performance of the tool 
 			due to IO factor of a system. I consider to write all response results to a file first.  
 			When the writing is done,  display the single file onto the console. 
 
