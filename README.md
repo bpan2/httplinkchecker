@@ -48,7 +48,7 @@ Written in java, httplinkchecker is used to check if HTTP links are broken or no
 		2.1 LinkRetriever: 1. Performance is a key factor to be considered 
 					when the number of files to be searched and the size of a file to be searched 
 					are signficant enough to impact the performance of this tool. 
-				   2. GNU Grep is recommended for searching for HTTP link
+				   2. GNU Grep is recommended for searching for HTTP links
 				   	due to its implmenetation of Boyer–Moore string-search algorithm.
 				   3. Multithreading is considered. 
 				   4. SeekableByteChannel and ByteBuffer.allocateDirect are considered 
