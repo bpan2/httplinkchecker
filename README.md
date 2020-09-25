@@ -73,7 +73,13 @@ Written in java, httplinkchecker is used to check if HTTP links are broken or no
 			When the writing is done,  display the single file onto the console. 
 
 ##   3. Known issues
-	3.1 jdk version conflicts between the version installed on Windows 10 and the version used by Eclipse(2020-09)  
+	3.1 jdk version conflicts between the version installed on Windows 10 and the version used by Eclipse(2020-09) 
+		On Linux, the following exception is thrown:
+				Exception in thread "main" java.lang.UnsupportedClassVersionError: 
+				httplinkchecker/LinkChecker has been compiled by a more recent version of
+				the Java Runtime (class file version 58.0), this version of the Java Runtime 
+				only recognizes class file versions up to 55.0
+				
 	3.2 The CMD console on Windows system can't produce colored output based on ANSC Codes.
 	
 ## 4. To-Do List:
