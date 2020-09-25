@@ -1,6 +1,5 @@
 //In September, 2020, the follow class is retrieved from: https://stackoverflow.com/questions/5762491/how-to-print-color-in-console-using-system-out-println
-// usage: 
-//	System.out.println(ConsoleColors.RED + "RED COLORED" + ConsoleColors.RESET + " NORMAL");
+// usage:  System.out.println(ConsoleColors.RED + "RED COLORED" + ConsoleColors.RESET + " NORMAL");
 
 /*public static final String ANSI_RESET = "\u001B[0m";
 	public static final String ANSI_BLACK = "\u001B[30m";
