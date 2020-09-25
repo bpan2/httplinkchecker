@@ -4,7 +4,7 @@ Written in java, httplinkchecker is used to check if HTTP links are broken or no
 ##  0. CLI Usage on Windows 10 system:
 	0.1 
 		0.1.1 Download httplinkchecker Runnable JAR file from the link above.
-			Note: work in progress, the functionalities are not fully implmented.
+			Note: work in progress, the functionalities are not fully implemented.
 		
 		0.1.2 jdk-14.02 needs to be installed and added to the path of Windows system.
 
@@ -12,12 +12,12 @@ Written in java, httplinkchecker is used to check if HTTP links are broken or no
 		$java -jar httplinkchecker.jar -v arg-1 arg-2 ...
 
 	0.3 Explanation: 
-		1. the tool, named as httplinkchecker, is an executable jar file in java.
+		1. the tool is an executable jar file in java.
 			Before using it, on Windows 10's cmd.exe, issue the following command:
 				javac
-			to check if your machine has installed the latest version of jdk 15.
+			to check if your machine has installed the latest version of jdk 15 or 14.
 			
-		2. the CLI arguments are separated by one space keystroke;
+		2. the CLI arguments are separated by one space key stroke;
 		
 	  	3. arg-1 and arg-2, etc can be 
 			either a directory/folder path 
