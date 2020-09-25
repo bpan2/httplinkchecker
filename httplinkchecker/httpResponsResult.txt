@@ -1,4 +1,6 @@
-"https://www.senecacollege.ca/" :(200 | OK | SUCCESS )"http://www.google.com/" :(200 | OK | SUCCESS )
+
+"https://www.senecacollege.ca/" :(200 | OK | SUCCESS )
+"http://www.google.com/" :(200 | OK | SUCCESS )
 "http://www.google.com/" :(200 | OK | SUCCESS )
 "http://www.google.com/" :(200 | OK | SUCCESS )
 "http://www.google.com/" :(200 | OK | SUCCESS )
