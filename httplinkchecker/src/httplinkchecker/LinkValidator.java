@@ -1,3 +1,5 @@
+//LinkValidator sends requests based on links retrieved by LinkRetriever
+//and writes all responses into a single file to be displayed by Message class
 package httplinkchecker;
 
 import java.util.ArrayList;
