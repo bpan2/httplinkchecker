@@ -1,3 +1,4 @@
+//LinkRetriever gets http links from files
 package httplinkchecker;
 
 import java.io.BufferedReader;
