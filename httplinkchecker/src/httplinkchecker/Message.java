@@ -1,4 +1,4 @@
-//the Message class is a Singleton class
+//Message class is a Singleton class to display all messages of the tool
 
 
 package httplinkchecker;
