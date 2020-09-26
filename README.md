@@ -50,27 +50,27 @@ Written in java, httplinkchecker is used to check if HTTP links are broken or no
 		1.1.5. Message
 
 ##  2. Implementation Considertations:
-		2.1 LinkRetriever: 1. Performance is a key factor to be considered 
-					when the number of files to be searched and the size of a file to be searched 
-					are signficant enough to impact the performance of this tool. 
-				   2. GNU Grep is recommended for searching for HTTP links
-				   	due to its implmenetation of Boyer–Moore string-search algorithm.
-				   3. Multithreading is considered. 
-				   4. SeekableByteChannel and ByteBuffer.allocateDirect are considered 
-				   	based on the suggestions from
+	2.1 LinkRetriever: 1. Performance is a key factor to be considered 
+				when the number of files to be searched and the size of a file to be searched 
+				are signficant enough to impact the performance of this tool. 
+			   2. GNU Grep is recommended for searching for HTTP links
+				due to its implmenetation of Boyer–Moore string-search algorithm.
+			   3. Multithreading is considered. 
+			   4. SeekableByteChannel and ByteBuffer.allocateDirect are considered 
+				based on the suggestions from
 				https://stackoverflow.com/questions/14037404/java-read-large-text-file-with-70million-line-of-text 
 
-		2.2 LinkValidator: 1. Performance could become a significant issue when sending out many HTTP requests 
-					and waiting for responses.
-				   2. Mutlithreading is considered via java's ExecutorService to manage multithreading.
+	2.2 LinkValidator: 1. Performance could become a significant issue when sending out many HTTP requests 
+				and waiting for responses.
+			   2. Mutlithreading is considered via java's ExecutorService to manage multithreading.
 		 
-		2.3 Singleton pattern is used for utility classes: LinkStatus and Message
+	2.3 Singleton pattern is used for utility classes: LinkStatus and Message
 		
-		2.4 In Message class, use HashMap instead of 2D String array to store all fixed messages for output
+	2.4 In Message class, use HashMap instead of 2D String array to store all fixed messages for output
 		
-		2.5 Displaying too many the response results simultaneously could slow down the performance of the tool 
-			due to IO factor of a system. I consider to write all response results to a file first.  
-			When the writing is done,  display the single file onto the console. 
+	2.5 Displaying too many the response results simultaneously could slow down the performance of the tool 
+				due to IO factor of a system. I consider to write all response results to a file first.  
+				When the writing is done,  display the single file onto the console. 
 
 ##   3. Known issues
 	3.1 jdk version conflicts between the version installed on Windows 10 and the version used by Eclipse(2020-09) 
