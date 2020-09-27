@@ -19,7 +19,18 @@ import java.util.regex.Pattern;
 
 import org.apache.commons.io.FileUtils;
 
-public class LinkRetriever {
+//I don't like the usage of ArrayList of ArrayList here.
+//Other options: ArrayList of Array, HashChain, Array of Array (2D Array)  
+//https://stackoverflow.com/questions/8559092/create-an-array-of-arraylists
+//Title: Create an Array of Arraylists
+//Array of ArrayList has been ruled out
+
+//https://www.journaldev.com/744/java-array-of-arraylist-of-array
+
+
+
+public class LinkStringExtractor {
+	
 	private ArrayList<ArrayList<String>> allFilePathByDirectory;
 	private ArrayList<ArrayList<String>> allHTTPLinksByFile = new ArrayList<ArrayList<String>>();
 	private ArrayList<String> absFilePaths;
@@ -27,12 +38,11 @@ public class LinkRetriever {
 	private ArrayList<String> fileNames;
 	private ArrayList<String> options;
 
-	LinkRetriever() {
+	LinkStringExtractor() {
 		this(null, null, null);
 	}
 
-	//
-	LinkRetriever(ArrayList<String> dirPaths, ArrayList<String> fileNames, ArrayList<String> options) {
+	LinkStringExtractor(ArrayList<String> dirPaths, ArrayList<String> fileNames, ArrayList<String> options) {
 		this.allFilePathByDirectory = new ArrayList<ArrayList<String>>(dirPaths.size());
 		this.dirPaths = dirPaths;
 		this.fileNames = fileNames;
@@ -44,8 +54,8 @@ public class LinkRetriever {
 					absFilePaths = retrieveAllSubDirFilePaths(dp);
 					allFilePathByDirectory.add(absFilePaths);
 				}
-				break;
 			}
+			break;
 		}
 
 		System.out.println("allFilePathByDirectory: ");
@@ -60,7 +70,6 @@ public class LinkRetriever {
 		allHTTPLinksByFile.add(retrieveAllHTTPLinksByFile(allFilePathByDirectory));
 		System.out.println("allHTTPLinksByFile: ");
 		print2DArrayList(allHTTPLinksByFile);
-
 	}
 	
 	
@@ -103,8 +112,6 @@ public class LinkRetriever {
 	private ArrayList<String> retrieveAllHTTPLinksByFile(String fileName) {
 		ArrayList<String> alllinks = new ArrayList<>();
 		Path filePath = Paths.get(fileName);
-		
-		
 		
 		try {
 			List<String> tmpFile = Files.readAllLines(filePath, StandardCharsets.ISO_8859_1);
