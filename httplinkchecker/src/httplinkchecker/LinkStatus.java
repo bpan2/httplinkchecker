@@ -1,3 +1,5 @@
+//LinkStatus is implemented with enum for the most common list status codes 
+
 package httplinkchecker;
 
 //https://developer.mozilla.org/en-US/docs/Web/HTTP/Status

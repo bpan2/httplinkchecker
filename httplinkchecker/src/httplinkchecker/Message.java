@@ -1,5 +1,7 @@
-package httplinkchecker;
+//Message class is a Singleton class to display all messages of the tool
 
+
+package httplinkchecker;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -7,8 +9,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-
-//the Message class is a Singleton class
 public class Message {
 	private static Message instance;
 	   private Message(){}

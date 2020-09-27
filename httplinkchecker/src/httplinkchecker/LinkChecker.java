@@ -1,5 +1,8 @@
 package httplinkchecker;
 
+//This class is the entry point of my tool
+
+
 public class LinkChecker {
 public static int MAXNUMPATHS = 10;
 	

@@ -1,3 +1,4 @@
+//ArgParser is used to process the CLI input and to generate the absolute paths to the files for this tool to check
 package httplinkchecker;
 
 import java.io.File;
