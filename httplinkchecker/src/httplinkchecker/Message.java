@@ -69,6 +69,13 @@ public class Message {
 					printMsg(msgKey, style);
 					break;
 					
+				case "good":
+					printGoodLinks(target, style);
+					break;
+					
+				case "bad":
+					printBadLinks(target, style);
+					break;
 				default:
 					
 				}
