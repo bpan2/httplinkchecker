@@ -48,7 +48,7 @@ public class Message {
 	   }
 	  
 	   
-		public void displyMessage(String msgType, int msgIndex, ArrayList<String> target, int style) {
+		public void displyMessage(String msgType, int msgIndex, ArrayList<String> target, ArrayList<Integer> style) {
 			if(msgType != null) {
 				String msgKey = msgType + "-" + msgIndex; 
 				
