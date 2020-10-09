@@ -66,14 +66,20 @@ public class ArgParser {
 		options = new ArrayList<>();
 
 		for (String arg : args) {
-			if (arg.startsWith("-")) {
-				if(arg.length() == 1){//to check the length against the option input String contains only one '-' hyphen
+			if(arg.startsWith("--")) {
+				if(arg.length() == 2){//to check the length against the option input String contains only two '--' hyphen
+					System.out.println("Invalid option: " + "\"" + arg + "\"");
+					continue;
+				}
+				this.options.add(arg.substring(2).toLowerCase()); 
+			}
+			else if (arg.startsWith("-") || arg.startsWith("\"")) {
+				if(arg.length() == 1){//to check the length against the option input String contains only one '-' hyphen or one '\'
 					System.out.println("Invalid option: " + "\"" + arg + "\"");
 					continue;
 				}
 				this.options.add(arg.substring(1).toLowerCase());
-				
-			} else {
+			}else { 
 				File f = new File(arg.toLowerCase());
 
 				if (f.exists()) {
