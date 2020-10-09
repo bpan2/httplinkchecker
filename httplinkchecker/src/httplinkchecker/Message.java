@@ -95,7 +95,7 @@ public class Message {
 			System.out.println();
 		}
 		
-		private void printElement(ArrayList<String> strs, int style) {
+		private void printElement(ArrayList<String> strs, ArrayList<Integer> style) {
 			if (strs != null && strs.size() > 0) {
 				for (String str : strs) {
 					System.out.print(str.toString() + ",  ");
@@ -105,7 +105,7 @@ public class Message {
 		}
 		
 		//to be improved
-		private void printResults(ArrayList<String> strs, int style) {
+		private void printResults(ArrayList<String> strs, ArrayList<Integer> style) {
 			for(String str : strs) {
 				System.out.println(str.toString());
 			}
@@ -120,7 +120,7 @@ public class Message {
 			}
 		}
 		
-		private void printMsg(String msgKey, int style) {
+		private void printMsg(String msgKey, ArrayList<Integer> style) {
 			System.out.println(msgPools.get(msgKey).toString());
 		}
 		
