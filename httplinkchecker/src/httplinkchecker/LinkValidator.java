@@ -40,13 +40,6 @@ public class LinkValidator {
 		}
 	}
 	
-	private File removeAllSpaces(String path) {
-		File f = new File(path);
-		
-		
-		
-		return f;
-	}
 	
 	//In the main thread, send a HTTP request to the server, retrieve its response, and write it to a file
 	private void validateHttpLink(String url) throws Exception {
