@@ -82,6 +82,19 @@ public class Message {
 			
 		}
 		
+		private void printJSON(ArrayList<String> target, ArrayList<Integer> status) {
+			System.out.print("[");
+			for(String t : target) {
+				System.out.print("{ ");
+				System.out.print(target + ": ");
+				System.out.print("status: " + status);
+				System.out.print(" },");
+				System.out.println();
+			}
+			System.out.print("]");
+			System.out.println();
+		}
+		
 		private void printElement(ArrayList<String> strs, int style) {
 			if (strs != null && strs.size() > 0) {
 				for (String str : strs) {
