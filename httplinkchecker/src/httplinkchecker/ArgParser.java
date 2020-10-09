@@ -29,7 +29,7 @@ public class ArgParser {
 		msg = Message.getInstance();
 
 		if (args.length == 0) {
-			this.msg.displyMessage("ErrMsg", 1, null, 1);
+			this.msg.displyMessage("ErrMsg", 1, null, null);
 		}
 
 		parseArgs(args);
@@ -39,12 +39,12 @@ public class ArgParser {
 				switch (op) {
 				case "h":
 				case "help":
-					this.msg.displyMessage("Instruction", 1, null, 1);
+					this.msg.displyMessage("Instruction", 1, null, null);
 					break;
 					
 				case "v":
 				case "version":
-					this.msg.displyMessage("Instruction", 2, null, 1);
+					this.msg.displyMessage("Instruction", 2, null, null);
 					break;
 					
 				case "r":
