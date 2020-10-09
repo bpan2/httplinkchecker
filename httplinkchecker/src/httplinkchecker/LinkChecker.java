@@ -21,16 +21,16 @@ public static int MAXNUMPATHS = 10;
 		 ArgParser ap = new ArgParser(cmdarg);
 		
 		  System.out.print("dirPaths: "); 
-		  msg.displyMessage("Element", 0, ap.getDirPaths(), 0);
+		  msg.displyMessage("Element", 0, ap.getDirPaths(), null);
 		  
 		  System.out.print("filePaths: "); 
-		  msg.displyMessage("Element", 0, ap.getFilePaths(), 0);
+		  msg.displyMessage("Element", 0, ap.getFilePaths(), null);
 		  
 		  System.out.print("fileNames: "); 
-		  msg.displyMessage("Element", 0, ap.getFileNames(), 0);
+		  msg.displyMessage("Element", 0, ap.getFileNames(), null);
 		  
 		  System.out.print("options: "); 
-		  msg.displyMessage("Element", 0, ap.getOptions(), 0);
+		  msg.displyMessage("Element", 0, ap.getOptions(), null);
 		 
 			/*
 			 * System.out.print("subDirPathByFile: ");
