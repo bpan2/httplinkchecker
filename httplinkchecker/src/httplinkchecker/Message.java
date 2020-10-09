@@ -73,6 +73,14 @@ public class Message {
 					printJSON(target, style);
 					break;
 					
+				case "good":
+					printGoodLinks(target, style);
+					break;
+					
+				case "bad":
+					printBadLinks(target, style);
+					break;
+
 				default:
 					
 				}
@@ -82,6 +90,7 @@ public class Message {
 			
 		}
 		
+
 		private void printJSON(ArrayList<String> target, ArrayList<Integer> status) {
 			System.out.print("[");
 			for(String t : target) {
@@ -93,6 +102,22 @@ public class Message {
 			}
 			System.out.print("]");
 			System.out.println();
+
+		private void printBadLinks(ArrayList<String> target, ArrayList<Integer> style) {
+			for(int i=0; i < style.size(); i++) {
+				if( style.get(i) > 400) {
+					System.out.println(target.get(i));
+				}
+			}
+		}
+
+
+		private void printGoodLinks(ArrayList<String> target, ArrayList<Integer> style) {
+			for(int i=0; i < style.size(); i++) {
+				if( style.get(i) < 400 && style.get(i) > 100) {
+					System.out.println(target.get(i));
+				}
+			}
 		}
 		
 		private void printElement(ArrayList<String> strs, ArrayList<Integer> style) {

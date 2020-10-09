@@ -14,7 +14,7 @@ public static int MAXNUMPATHS = 10;
 		//String[] cmdarg = new String[0];
 		//String[] cmdarg = {"-r", "-HElp", "sample.txt", "this is not a file name", "C:\\Users\\2water\\eclipse-workspace",  "C:\\Users\\2water\\eclipse-workspace\\t2.txt", "C:\\Users\\2water\\eclipse-workspace\\httplinkchecker\\index.html", "t1.txt"};
 		//String[] cmdarg = {"-v", "-HElp","t1.txt", "-r", "C:\\Users\\2water\\eclipse-workspace\\httplinkchecker\\index.html"};
-		String[] cmdarg = {"-v", "-",  "-hElP", "t1.txt", "C:\\Users\\2water\\eclipse-workspace"};
+		String[] cmdarg = {"-v", "--good", "url-list"};
 		
 		//.........................................................................
 		//1. based on file names, and options, get all absolute paths to the files
@@ -40,17 +40,26 @@ public static int MAXNUMPATHS = 10;
 		
 		//.........................................................................
 		//2. in each available file, search for links via regex
-		//LinkRetriever lr = new LinkRetriever(ap.getDirPaths(), ap.getFileNames(), ap.getOptions());
+		  LinkStringExtractor lr = new LinkStringExtractor(ap.getDirPaths(), ap.getFileNames(), ap.getOptions());
 		
 		
 		//.........................................................................
 		//3. validate the retrieved links via ExecutorsService
-		//LinkValidator lv = new LinkValidator(lr.getAllHttpLinksByFile());
+		LinkValidator lv = new LinkValidator(lr.getAllHttpLinksByFile());
 		
 		
 		//.........................................................................
 		//4. output all the returned results
 		//msg.displayResponseResult(lv.getResponseResultFilePath());
+		  for(String op : ap.getOptions()) {
+				if(op.equalsIgnoreCase("good")) {
+					msg.displyMessage("good", 1, lv.getValidLinks(), lv.getResponses());
+				}
+				else if(op.equalsIgnoreCase("bad")) {
+					msg.displyMessage("bad", 1, lv.getValidLinks(), lv.getResponses());
+				}
+				
+			}
 		
 	} 
 }
