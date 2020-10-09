@@ -69,6 +69,10 @@ public class Message {
 					printMsg(msgKey, style);
 					break;
 					
+				case "JSON":
+					printJSON(target, style);
+					break;
+					
 				default:
 					
 				}
