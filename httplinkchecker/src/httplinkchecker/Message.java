@@ -85,6 +85,23 @@ public class Message {
 			
 		}
 		
+		private void printBadLinks(ArrayList<String> target, ArrayList<Integer> style) {
+			for(int i=0; i < style.size(); i++) {
+				if( style.get(i) > 400) {
+					System.out.println(target.get(i));
+				}
+			}
+		}
+
+
+		private void printGoodLinks(ArrayList<String> target, ArrayList<Integer> style) {
+			for(int i=0; i < style.size(); i++) {
+				if( style.get(i) < 400 && style.get(i) > 100) {
+					System.out.println(target.get(i));
+				}
+			}
+		}
+		
 		private void printElement(ArrayList<String> strs, int style) {
 			if (strs != null && strs.size() > 0) {
 				for (String str : strs) {
