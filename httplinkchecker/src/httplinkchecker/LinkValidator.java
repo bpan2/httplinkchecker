@@ -16,12 +16,17 @@ import org.apache.commons.io.FileUtils;
 public class LinkValidator {
 	private ArrayList<ArrayList<String>> allHTTPLinksByFile;
 	private File responseResult;
+	private ArrayList<Integer> responses;
+	private ArrayList<String> validLinks;
 
 	public LinkValidator() {
 		this(null);
 	}
 	
 	public LinkValidator(ArrayList<ArrayList<String>> allHTTPLinksByFile) {
+		validLinks = new ArrayList<>();
+		responses = new ArrayList<>();
+		
 		this.allHTTPLinksByFile = allHTTPLinksByFile;
 		if(responseResult == null) {
 			responseResult = new File("httpResponsResult.txt");
@@ -52,6 +57,8 @@ public class LinkValidator {
 			
 			int responseCode = connection.getResponseCode();
 			response = ls.getCompleteStatusMsg(responseCode);
+			
+			responses.add(responseCode);
 			
 			//write to a file rather than send to the console right away in order to avoid the potential bottleneck due to the computer's IO capacity 
 			writeHttpResponseToFile("\"" + url + "\" :"+ response);
