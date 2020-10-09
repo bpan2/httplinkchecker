@@ -90,4 +90,14 @@ public class LinkValidator {
 			return null;
 		}
 	}
+	
+	public ArrayList<Integer> getResponses(){
+		return new ArrayList<Integer>(this.responses);
+	}
+	
+	public ArrayList<String> getValidLinks(){
+		return new ArrayList<String>(this.validLinks);
+	}
+	
+	
 }
