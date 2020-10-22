@@ -129,13 +129,6 @@ public class Message {
 			}
 		}
 		
-		//to be improved
-		private void printResults(ArrayList<String> strs, ArrayList<Integer> style) {
-			for(String str : strs) {
-				System.out.println(str.toString());
-			}
-		}
-		
 		
 		private void printResults(ArrayList<ArrayList<String>> allPathsByDirectory) {
 			for (int i = 0; i < allPathsByDirectory.size(); i++) {

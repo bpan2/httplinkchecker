@@ -100,15 +100,13 @@ public class ArgParser {
 					try {
 						tmppath = f.getCanonicalPath().toString();
 					} catch (IOException e1) {
-						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
 
 					if (f.isDirectory()) {
 						this.dirPaths.add(tmppath);
-						this.filePaths.addAll(retrieveAllSubDirFilePaths(tmppath, false));// need an explanation of the
-																							// different usage based on
-																							// the boolean value
+						this.filePaths.addAll(retrieveAllSubDirFilePaths(tmppath, false));// the false boolean value here stops retrieveAllSubDirFilePaths() 
+						                                                                  // from recursively searching all the sub-directories for targeted file types 
 					} else if (f.isFile()) {
 						this.fileNames.add(arg);
 						this.filePaths.add(tmppath);
@@ -125,15 +123,9 @@ public class ArgParser {
 
 		// http://zetcode.com/java/fileutils/
 		File dir = new File(dirPath);
-		Collection<File> files = FileUtils.listFiles(dir, new String[] { "txt", "html" }, searchSubDir); // recursively
-																											// search
-		// all the
-		// sub-directories
-		// for those files
-		// with "txt" and
-		// "html" file
-		// extensions
-		// files.stream().forEach(System.out::println);
+        	Collection<File> files = FileUtils.listFiles(dir, new String[] { "txt", "html" }, searchSubDir); 
+		// recursively search all the sub-directories
+		// for those files with "txt" and "html" file extensions
 
 		for (File f : files) {
 			allSubDirFilePaths.add(f.getPath());

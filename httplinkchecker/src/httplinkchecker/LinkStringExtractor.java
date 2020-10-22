@@ -85,13 +85,7 @@ public class LinkStringExtractor {
 
 		// http://zetcode.com/java/fileutils/
 		File dir = new File(dirPath);
-		Collection<File> files = FileUtils.listFiles(dir, new String[] { "txt", "html" }, true); // recursively search
-																									// all the
-																									// sub-directories
-																									// for those files
-																									// with "txt" and
-																									// "html" file
-																									// extensions
+		Collection<File> files = FileUtils.listFiles(dir, new String[] {"txt", "html"}, true);
 		files.stream().forEach(System.out::println);
 
 		for (File f : files) {
@@ -196,10 +190,8 @@ public class LinkStringExtractor {
 	private boolean isHTTPLink(String url) {
 		boolean found = false;
 		//https://stackoverflow.com/questions/5713558/detect-and-extract-url-from-a-string
-		
-		
 		//String urlRegex = "(?:^|[\\W])((ht|f)tp(s?):\\/\\/|www\\.)" + "(([\\w\\-]+\\.){1,}?([\\w\\-.~]+\\/?)*" + "[\\p{Alnum}.,%_=?&#\\-+()\\[\\]\\*$~@!:/{};']*)";         
-        //String urlRegex = "(http|https)://[-a-zA-Z0-9+&@#/%?=~_|,!:.;]*[-a-zA-Z0-9+@#/%=&_|]";
+                //String urlRegex = "(http|https)://[-a-zA-Z0-9+&@#/%?=~_|,!:.;]*[-a-zA-Z0-9+@#/%=&_|]";
 		
 		String urlRegex = "\\b(http|https|ftp|file)://[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]";
 		
@@ -209,27 +201,14 @@ public class LinkStringExtractor {
 		
 		while (matcher.find()) {
 			  int matchStart = matcher.start(1); 
-			  //System.out.println("matchStart: " + matchStart);
 			  int matchEnd = matcher.end(); // now you have the offsets of a URL match 
-			  //System.out.println("matchEnd: " + matchEnd);
 			  url = url.substring(matchStart, matchEnd);
-			  //System.out.println("matched line: " + url);
 			  
 			  writeToT1(url);
 			  			  
 			found = true;
 		}
 		
-		
-		
 		return found;
-		
-		
-		
-		/*
-		 * Matcher m = pattern.matcher(url); if (m.matches()) {
-		 * System.out.println("matched line: " + url); return true; } else { return
-		 * false; }
-		 */
 	}
 }

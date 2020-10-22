@@ -69,17 +69,15 @@ public class LinkValidator {
 	}
 	
 	public void writeHttpResponseToFile(String response) {
-		
 		try(	
-				FileWriter fw = new FileWriter(responseResult, true);
-			    BufferedWriter bw = new BufferedWriter(fw);
-			    PrintWriter out = new PrintWriter(bw)
-		    )
-			{
-			    out.println(response);
-			} catch (IOException e) {
-			    //exception handling left as an exercise for the reader
-			}
+			FileWriter fw = new FileWriter(responseResult, true);
+			BufferedWriter bw = new BufferedWriter(fw);
+			PrintWriter out = new PrintWriter(bw)
+		    ){
+			out.println(response);
+		    } catch (IOException e) {
+			e.printStackTrace();
+		    }
 	}
 	
 	public String getResponseResultFilePath() {

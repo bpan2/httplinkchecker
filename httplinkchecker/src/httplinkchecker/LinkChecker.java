@@ -18,7 +18,7 @@ public static int MAXNUMPATHS = 10;
 		
 		//.........................................................................
 		//1. based on file names, and options, get all absolute paths to the files
-		 ArgParser ap = new ArgParser(cmdarg);
+		 ArgParser ap = new ArgParser(args);
 		
 		  System.out.print("dirPaths: "); 
 		  msg.displyMessage("Element", 0, ap.getDirPaths(), null);
