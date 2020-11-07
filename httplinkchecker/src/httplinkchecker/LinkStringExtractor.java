@@ -43,6 +43,12 @@ public class LinkStringExtractor {
 		this(null, null, null);
 	}
 
+	LinkStringExtractor(ArrayList<File> files){
+		for (File f : files) {
+			allHTTPLinksByFile.add(retrieveAllHTTPLinksByFile(f.toString()));
+		}
+	}
+
 	LinkStringExtractor(ArrayList<String> dirPaths, ArrayList<String> fileNames, ArrayList<String> options) {
 		this.allFilePathByDirectory = new ArrayList<ArrayList<String>>(dirPaths.size());
 		this.dirPaths = dirPaths;
