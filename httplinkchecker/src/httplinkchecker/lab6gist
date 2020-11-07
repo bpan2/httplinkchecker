@@ -1,0 +1,174 @@
+[1mdiff --git a/httplinkchecker/src/httplinkchecker/LinkChecker.java b/httplinkchecker/src/httplinkchecker/LinkChecker.java[m
+[1mindex bfeb924..ef3e766 100644[m
+[1m--- a/httplinkchecker/src/httplinkchecker/LinkChecker.java[m
+[1m+++ b/httplinkchecker/src/httplinkchecker/LinkChecker.java[m
+[36m@@ -3,53 +3,22 @@[m [mpackage httplinkchecker;[m
+ //This class is the entry point of my tool[m
+ [m
+ [m
+[31m-import java.io.File;[m
+[31m-import java.util.ArrayList;[m
+[31m-import java.util.Scanner;[m
+[31m-[m
+ public class LinkChecker {[m
+ public static int MAXNUMPATHS = 10;[m
+ 	[m
+ 	public static void main(String[] args) {		[m
+ 		Message msg = Message.getInstance();[m
+[31m-		[m
+[31m-		ArgParser ap = null;[m
+[31m-		ArrayList<String> urls = null;[m
+[31m-		ArrayList<File> files = null;[m
+[31m-		PageContentParser pcp = null;[m
+[31m-		[m
+[32m+[m[41m			[m
+ 		//.........................................................................[m
+ 		//0. CLI arguments for testing[m
+ 		//String[] cmdarg = new String[0];[m
+ 		//String[] cmdarg = {"-r", "-HElp", "sample.txt", "this is not a file name", "C:\\Users\\2water\\eclipse-workspace",  "C:\\Users\\2water\\eclipse-workspace\\t2.txt", "C:\\Users\\2water\\eclipse-workspace\\httplinkchecker\\index.html", "t1.txt"};[m
+ 		//String[] cmdarg = {"-v", "-HElp","t1.txt", "-r", "C:\\Users\\2water\\eclipse-workspace\\httplinkchecker\\index.html"};[m
+[31m-		//String[] cmdarg = {"-v", "--good", "url-list"};[m
+[31m-		[m
+[31m-[m
+[31m-		if(args.length > 0) {[m
+[31m-			 ap = new ArgParser(cmdarg);[m
+[31m-		}else {[m
+[31m-			 urls = new ArrayList<>();[m
+[31m-			 Scanner urlInput = new Scanner(System.in);[m
+[31m-			 System.out.println("Please enter a URL");[m
+[31m-			 [m
+[31m-			 while (urlInput.hasNext()) {[m
+[31m-				 urls.add(urlInput.next());[m
+[31m-		        }[m
+[31m-		 [m
+[31m-			 urlInput.close();[m
+[31m-		}[m
+[32m+[m		[32mString[] cmdarg = {"-v", "--good", "url-list"};[m[41m[m
+ 		[m
+[31m-		if(urls != null) {[m
+[31m-			pcp = new PageContentParser(urls);[m
+[31m-			files = new ArrayList<>();[m
+[31m-			files = pcp.getFiles();[m
+[31m-		}[m
+[31m-[m
+[31m-[m
+[31m-[m
+ 		//.........................................................................[m
+ 		//1. based on file names, and options, get all absolute paths to the files[m
+[32m+[m		[32m ArgParser ap = new ArgParser(args);[m[41m[m
+ 		[m
+ 		  System.out.print("dirPaths: "); [m
+ 		  msg.displyMessage("Element", 0, ap.getDirPaths(), null);[m
+[36m@@ -71,8 +40,8 @@[m [mpublic static int MAXNUMPATHS = 10;[m
+ 		[m
+ 		//.........................................................................[m
+ 		//2. in each available file, search for links via regex[m
+[31m-		//LinkStringExtractor lr = new LinkStringExtractor(ap.getDirPaths(), ap.getFileNames(), ap.getOptions());[m
+[31m-		LinkStringExtractor lr = new LinkStringExtractor(files);[m
+[32m+[m		[32m  LinkStringExtractor lr = new LinkStringExtractor(ap.getDirPaths(), ap.getFileNames(), ap.getOptions());[m[41m[m
+[32m+[m[41m		[m
+ 		[m
+ 		//.........................................................................[m
+ 		//3. validate the retrieved links via ExecutorsService[m
+[1mdiff --git a/httplinkchecker/src/httplinkchecker/LinkStringExtractor.java b/httplinkchecker/src/httplinkchecker/LinkStringExtractor.java[m
+[1mindex fbf10f0..477d35b 100644[m
+[1m--- a/httplinkchecker/src/httplinkchecker/LinkStringExtractor.java[m
+[1m+++ b/httplinkchecker/src/httplinkchecker/LinkStringExtractor.java[m
+[36m@@ -43,12 +43,6 @@[m [mpublic class LinkStringExtractor {[m
+ 		this(null, null, null);[m
+ 	}[m
+ [m
+[31m-	LinkStringExtractor(ArrayList<File> files){[m
+[31m-		for (File f : files) {[m
+[31m-			allHTTPLinksByFile.add(retrieveAllHTTPLinksByFile(f.toString()));[m
+[31m-		}[m
+[31m-	}[m
+[31m-[m
+ 	LinkStringExtractor(ArrayList<String> dirPaths, ArrayList<String> fileNames, ArrayList<String> options) {[m
+ 		this.allFilePathByDirectory = new ArrayList<ArrayList<String>>(dirPaths.size());[m
+ 		this.dirPaths = dirPaths;[m
+[1mdiff --git a/httplinkchecker/src/httplinkchecker/PageContentParser.java b/httplinkchecker/src/httplinkchecker/PageContentParser.java[m
+[1mdeleted file mode 100644[m
+[1mindex e522ad1..0000000[m
+[1m--- a/httplinkchecker/src/httplinkchecker/PageContentParser.java[m
+[1m+++ /dev/null[m
+[36m@@ -1,79 +0,0 @@[m
+[31m-package httplinkchecker;[m
+[31m-[m
+[31m-import java.io.File;[m
+[31m-import java.io.FileNotFoundException;[m
+[31m-import java.io.FileOutputStream;[m
+[31m-import java.io.IOException;[m
+[31m-import java.net.MalformedURLException;[m
+[31m-import java.net.URL;[m
+[31m-import java.nio.channels.Channels;[m
+[31m-import java.nio.channels.ReadableByteChannel;[m
+[31m-import java.util.ArrayList;[m
+[31m-[m
+[31m-[m
+[31m-public class PageContentParser {[m
+[31m-	private ArrayList<URL> urls;[m
+[31m-	private ArrayList<File> files;[m
+[31m-	[m
+[31m-	public PageContentParser(ArrayList<String> srcURLs) {[m
+[31m-		this.urls = new ArrayList<URL>();[m
+[31m-		for(int i= 0; i<srcURLs.size(); i++) {[m
+[31m-			this.urls.add(strToURL(srcURLs.get(i)));[m
+[31m-		}[m
+[31m-		[m
+[31m-		webContentToFiles();[m
+[31m-	}[m
+[31m-	[m
+[31m-	private URL strToURL(String src) {[m
+[31m-		URL url = null;[m
+[31m-		try {[m
+[31m-			url = new URL(src);[m
+[31m-		} catch (MalformedURLException e) {[m
+[31m-			// TODO Auto-generated catch block[m
+[31m-			e.printStackTrace();[m
+[31m-		}[m
+[31m-		return url;[m
+[31m-	}[m
+[31m-	[m
+[31m-	private void webContentToFiles() {[m
+[31m-		this.files = new ArrayList<>();[m
+[31m-		[m
+[31m-		for(URL url : urls) {[m
+[31m-			String fileName = new String(url.toString().substring(5) + ".txt");[m
+[31m-			File f = new File(fileName);[m
+[31m-			[m
+[31m-			//The following segment of code is to copy the contents on a webpage into a file.[m
+[31m-			//The segment is adopted from[m
+[31m-			//https://stackoverflow.com/questions/921262/how-to-download-and-save-a-file-from-internet-using-java[m
+[31m-			ReadableByteChannel rbc = null;[m
+[31m-			try {[m
+[31m-				rbc = Channels.newChannel(url.openStream());[m
+[31m-			} catch (IOException e) {[m
+[31m-				// TODO Auto-generated catch block[m
+[31m-				e.printStackTrace();[m
+[31m-			}[m
+[31m-			FileOutputStream fos;[m
+[31m-			try {[m
+[31m-				fos = new FileOutputStream(f);[m
+[31m-				fos.getChannel().transferFrom(rbc, 0, Long.MAX_VALUE);[m
+[31m-			} catch (FileNotFoundException e) {[m
+[31m-				// TODO Auto-generated catch block[m
+[31m-				e.printStackTrace();[m
+[31m-			} catch (IOException e) {[m
+[31m-				// TODO Auto-generated catch block[m
+[31m-				e.printStackTrace();[m
+[31m-			}[m
+[31m-	[m
+[31m-			[m
+[31m-			this.files.add(f);[m
+[31m-		}[m
+[31m-	}[m
+[31m-[m
+[31m-	public ArrayList<URL> getUrls() {[m
+[31m-		return urls;[m
+[31m-	}[m
+[31m-[m
+[31m-	public ArrayList<File> getFiles() {[m
+[31m-		return files;[m
+[31m-	}[m
+[31m-}[m
