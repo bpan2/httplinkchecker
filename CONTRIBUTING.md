@@ -3,7 +3,9 @@ Written in java, httplinkchecker is used to check if HTTP links are broken or no
 
 ##  1. Java Dev Environment Setup on Ubuntu:
 1. Java 15.
-Please follow the instruction on the following posting: [Install Oracle Java 15 on Ubuntu using an APT PPA repository](https://www.linuxuprising.com/2020/09/how-to-install-oracle-java-15-on-ubuntu.html)
+
+	Please follow the instruction on the following posting: [Install Oracle Java 15 on Ubuntu using an APT PPA repository](https://www.linuxuprising.com/2020/09/how-to-install-oracle-java-15-on-ubuntu.html)
+
 
 2. Install Eclipse for Ubuntu using linux terminal:
 
