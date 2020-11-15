@@ -79,7 +79,7 @@ public class Message {
 					
 				case "bad":
 					printBadLinks(target, style);
-					break;
+				
 
 				default:
 					
@@ -101,7 +101,9 @@ public class Message {
 				System.out.println();
 			}
 			System.out.print("]");
+			
 			System.out.println();
+		}
 
 		private void printBadLinks(ArrayList<String> target, ArrayList<Integer> style) {
 			for(int i=0; i < style.size(); i++) {
@@ -129,6 +131,13 @@ public class Message {
 			}
 		}
 		
+		private void printResults(ArrayList<String> allPathsByDirectory, ArrayList<Integer> style) {
+			for (int i = 0; i < allPathsByDirectory.size(); i++) {
+				
+					System.out.println(allPathsByDirectory.get(i) + ", ");
+				
+			}
+		}
 		
 		private void printResults(ArrayList<ArrayList<String>> allPathsByDirectory) {
 			for (int i = 0; i < allPathsByDirectory.size(); i++) {

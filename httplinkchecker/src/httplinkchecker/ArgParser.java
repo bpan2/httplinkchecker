@@ -66,16 +66,6 @@ public class ArgParser {
 		options = new ArrayList<>();
 
 		for (String arg : args) {
-			if (arg.startsWith("--")) {
-				if (arg.length() == 2) {// to check the length against the option input String contains only two '--'
-										// hyphen
-					System.out.println("Invalid option: " + "\"" + arg + "\"");
-					continue;
-				}
-				this.options.add(arg.substring(2).toLowerCase());
-			} else if (arg.startsWith("-")|| arg.startsWith("\"")) {
-				if (arg.length() == 1) {// to check the length against the option input String contains only one '-'
-										// hyphen or one backward slash '\'
 			if(arg.startsWith("--")) {
 				if(arg.length() == 2){//to check the length against the option input String contains only two '--' hyphen
 					System.out.println("Invalid option: " + "\"" + arg + "\"");
@@ -114,10 +104,10 @@ public class ArgParser {
 				} else {
 					System.out.println("Invalid argument input: " + "\"" + arg + "\"");
 				}
-			}
-		}
+			}	
+		}//end of the for loop			
 	}
-
+	
 	private ArrayList<String> retrieveAllSubDirFilePaths(String dirPath, boolean searchSubDir) {
 		ArrayList<String> allSubDirFilePaths = new ArrayList<>();
 
