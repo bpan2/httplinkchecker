@@ -6,7 +6,7 @@ Written in java, httplinkchecker is used to check if HTTP links are broken or no
 #### 	1.1 Environment Setup: 
 
 
-		[Vdeio] (https://www.youtube.com/watch?v=zmnlpf4FtkE)
+		[Vdeio](https://www.youtube.com/watch?v=zmnlpf4FtkE)
 
 
 
