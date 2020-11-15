@@ -8,12 +8,14 @@ Please follow the instruction on the following posting: [Install Oracle Java 15 
 2. Install Eclipse for Ubuntu using linux terminal:
 
 	2.1 Install Eclipse IDE:
+	
 		```
 		sudo snap install --classic eclipse
 		```
 		
 	2.2 Install Java JRE:
-		```
+	
+		```linux
 		sudo apt install default-jre
 		```
 	Note:
