@@ -3,9 +3,9 @@ Written in java, httplinkchecker is used to check if HTTP links are broken or no
 
 ##  1. Guidelines on developing the tool on Ubuntu:
 
-###  	1.1 Environment Setup:
-
-		[Node.js] (https://nodejs.org/en/download/)
+###  	1.1 Environment Setup: 
+	
+	[Google] (google.com)
 
 #### 	1.2 Prerequisites:
 	
