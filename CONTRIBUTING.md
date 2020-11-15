@@ -5,13 +5,13 @@ Written in java, httplinkchecker is used to check if HTTP links are broken or no
 
 ###  1.1 Environment Setup:
 
-#### 	Prerequisites:
+#### 1.2 Prerequisites:
 	
-####    After installing the prerequisites:
+#### 1.3 After installing the prerequisites:
 
-#### 	Finally:
+#### 1.4 Finally:
 
-####    Frequently Asked Questions (FAQ)
+#### 1.5 Frequently Asked Questions (FAQ)
 
 ##  2. Known issues
 	3.1 jdk version conflicts between the version installed on Windows 10 and the version used by Eclipse(2020-09) 
