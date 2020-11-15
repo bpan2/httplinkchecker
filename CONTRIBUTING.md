@@ -24,14 +24,19 @@ Written in java, httplinkchecker is used to check if HTTP links are broken or no
 3. Add the required plugins into Eclipse:
 
 	3.1 Add SpotBugs as the linter:
+	
 	Open Eclipse, go to Help menu, 
 		then open Eclipse Marketplace wizard, on its search tab, search for "Spotbugs", 
 		click on the "install" button for SpotBugs Eclipse plugin.
 	
 	3.2 Add Google Java Format as the source code formatter:
+	
 		1. Go to Google's Java Format at Github at https://github.com/google/google-java-format
+	
 		2. Download the jar file for google-java-format-1.9 at https://github.com/google/google-java-format/releases
+		
 		3. Import the downloaded jar file into Eclipse:
+		
 			3.1 Project -> Properties -> Java Build Path -> Libraries -> click on Classpath 
 				    -> Add External JARs 
 				    -> find and select the jar file for google-java-format-1.9-all-deps.jar, and click on open 
