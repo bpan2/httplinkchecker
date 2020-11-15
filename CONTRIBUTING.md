@@ -25,7 +25,7 @@ Written in java, httplinkchecker is used to check if HTTP links are broken or no
 
 	3.1 Add SpotBugs as the linter:
 	
-	Open Eclipse, go to Help menu, 
+		Open Eclipse, go to Help menu, 
 		then open Eclipse Marketplace wizard, on its search tab, search for "Spotbugs", 
 		click on the "install" button for SpotBugs Eclipse plugin.
 	
