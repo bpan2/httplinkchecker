@@ -1,6 +1,16 @@
 #   httplinkchecker
 
     Written in java, httplinkchecker is used to check if HTTP links are broken or not
+    
+##  0. How to use it on the command line:
+
+		$java -jar httplinkchecker.jar -v arg-1 arg-2 ...
+		
+		Note for options:
+			1. -r: recursively read all existing sub-directories/folders for regular files
+			2. -v: version information
+			3. -h/help: for information about the tool as well as instructions on how to use the tool
+
 
 ##  1. Design Considerations:
 	1.1 Objects to be used:
@@ -19,6 +29,9 @@
 		1.1.4. LinkStatus: use enum
 
 		1.1.5. Message: as Singleton
+		
+		1.1.6. PageContentParser.java: given the HTTP link to a webpage, this class reads all the contents of the page into a single file,
+			                       retrieves all valid HTTP links in the file and check those links are broken or not.
 
 ##  2. Implementation Considertations:
 	2.1 LinkRetriever: 1. Performance is a key factor to be considered 
@@ -42,6 +55,7 @@
 	2.5 Displaying too many the response results simultaneously could slow down the performance of the tool 
 				due to IO factor of a system. I consider to write all response results to a file first.  
 				When the writing is done,  display the single file onto the console. 
+				
 
 
 	
