@@ -1,7 +1,7 @@
 # httplinkchecker
 Written in java, httplinkchecker is used to check if HTTP links are broken or not
 
-##  0. CLI Usage on Windows 10 system:
+##  1. CLI Usage on Windows 10 system:
 	0.1 
 		0.1.1 Download httplinkchecker Runnable JAR file from the link above.
 			Note: work in progress, the functionalities are not fully implemented.
@@ -29,3 +29,21 @@ Written in java, httplinkchecker is used to check if HTTP links are broken or no
 			1. -r: recursively read all existing sub-directories/folders for regular files
 			2. -v: version information
 			3. -h/help: for information about the tool as well as instructions on how to use the tool
+
+
+##  2. Ubuntu:
+
+##  3. Known issues
+	3.1 jdk version conflicts between the version installed on Windows 10 and the version used by Eclipse(2020-09) 
+		On Linux, the following exception is thrown:
+				Exception in thread "main" java.lang.UnsupportedClassVersionError: 
+				httplinkchecker/LinkChecker has been compiled by a more recent version of
+				the Java Runtime (class file version 58.0), this version of the Java Runtime 
+				only recognizes class file versions up to 55.0
+				
+	3.2 The CMD console on Windows system can't produce colored output based on ANSC Codes.
+	
+##  4. To-Do List:
+	4.1 output in color, based on https://github.com/dialex/JColor
+	4.2 multithreading
+	4.3 handle all checked exceptions
