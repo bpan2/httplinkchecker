@@ -5,7 +5,7 @@ Written in java, httplinkchecker is used to check if HTTP links are broken or no
 
 ###  	1.1 Environment Setup:
 
-		[Node.js (npm)](https://nodejs.org/en/download/)
+		[Node.js] (https://nodejs.org/en/download/)
 
 #### 	1.2 Prerequisites:
 	
