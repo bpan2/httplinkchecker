@@ -6,8 +6,7 @@ Written in java, httplinkchecker is used to check if HTTP links are broken or no
 #### 	1.1 Environment Setup: 
 
 
-
-	[link to Google!](http://google.com)
+	[Google] (www.google.com)
 
 
 
