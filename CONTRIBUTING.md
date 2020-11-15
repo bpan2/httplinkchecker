@@ -6,6 +6,7 @@ Written in java, httplinkchecker is used to check if HTTP links are broken or no
 Please follow the instruction on the following posting: [Install Oracle Java 15 on Ubuntu using an APT PPA repository](https://www.linuxuprising.com/2020/09/how-to-install-oracle-java-15-on-ubuntu.html)
 
 2. Install Eclipse for Ubuntu using linux terminal:
+
 	2.1 Install Eclipse IDE:
 		sudo snap install --classic eclipse
 		
@@ -13,9 +14,10 @@ Please follow the instruction on the following posting: [Install Oracle Java 15 
 		sudo apt install default-jre
 		
 	Note:
-		the detailed instruction can be found at https://linuxconfig.org/ubuntu-20-04-eclipse-installation
+		The detailed instruction can be found at https://linuxconfig.org/ubuntu-20-04-eclipse-installation
 		
-3. Add the required plugins into Eclipse
+3. Add the required plugins into Eclipse:
+
 	3.1 Add SpotBugs as the linter:
 	Open Eclipse, go to Help menu, 
 		then open Eclipse Marketplace wizard, on its search tab, search for "Spotbugs", 
